@@ -59,8 +59,6 @@
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
 - **[ create animals table]**
 - **[query and update animals table]**
 - **[query multiple tables]**
