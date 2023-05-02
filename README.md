@@ -66,8 +66,6 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
@@ -84,13 +82,9 @@ In order to run this project you need:
 ```sh
  gem install rails
 ```
-
-
 ### Setup
 
 Clone this repository to your desired folder:
-
-
 
 ```sh
   cd my-folder
