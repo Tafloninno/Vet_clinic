@@ -13,8 +13,6 @@
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -32,12 +30,6 @@
 
 ### Tech Stack <a name="tech-stack"></a>
 
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details>
 
 <details>
 <summary>Database</summary>
@@ -90,37 +82,11 @@ Install this project with:
 ```
 
 
+
 ### Usage
 
-To run the project, execute the following command:
+To run the project, you can copy queries from the given files and use them into psql or pgAdmin 4.
 
-
-
-```sh
-  rails server
-```
-
-
-### Run tests
-
-To run tests, run the following command:
-
-
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
-
-
-### Deployment
-
-You can deploy this project using:
-
-
-
-```sh
-
-```
  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
