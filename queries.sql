@@ -30,6 +30,9 @@ SELECT * FROM animals WHERE species = 'pokemon';
 
 COMMIT;
 
+BEGIN;
+DELETE FROM animals;
+ROLLBACK;
 
 
 SELECT * FROM animals
