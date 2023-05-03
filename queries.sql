@@ -10,6 +10,28 @@ SELECT * FROM animals WHERE name <> 'Gabumon';
 SELECT * FROM animals WHERE weight_kg BETWEEN 10.4 AND 17.3;
 
 
+BEGIN;
+
+
+UPDATE animals SET species = 'unspecified';
+SELECT * FROM animals WHERE species = 'unspecified'; 
+
+
+ROLLBACK;
+SELECT * FROM animals WHERE species <> 'unspecified'; 
+
+BEGIN;
+
+UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
+SELECT * FROM animals WHERE species = 'digimon'; 
+
+UPDATE animals SET species = 'pokemon' WHERE species IS NULL;
+SELECT * FROM animals WHERE species = 'pokemon'; 
+
+COMMIT;
+
+
+
 SELECT * FROM animals
 
 BEGIN;
