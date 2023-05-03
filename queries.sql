@@ -11,14 +11,11 @@ SELECT * FROM animals WHERE weight_kg BETWEEN 10.4 AND 17.3;
 
 
 BEGIN;
-
-
+SELECT * FROM animals;
 UPDATE animals SET species = 'unspecified';
-SELECT * FROM animals WHERE species = 'unspecified'; 
-
 
 ROLLBACK;
-SELECT * FROM animals WHERE species <> 'unspecified'; 
+SELECT * FROM animals;
 
 BEGIN;
 
@@ -38,24 +35,24 @@ ROLLBACK;
 SELECT * FROM animals
 
 BEGIN;
-SELECT * FROM animals
+SELECT * FROM animals;
 DELETE FROM animals WHERE date_of_birth > '2022-01-01';
-SAVEPOINT my_savepoint;
-UPDATE animals SET weight_kg = weight_kg * -1;
-ROLLBACK TO SAVEPOINT my_savepoint;
-UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
+SAVEPOINT before_weight_update;
+UPDATE animals SET weight_kg = -1 * weight_kg;
+ROLLBACK TO before_weight_update;
+UPDATE animals SET weight_kg = -1 * weight_kg WHERE weight_kg < 0;
 COMMIT;
 
 SELECT * FROM animals
 
 BEGIN;
-SELECT * FROM animals
 SELECT COUNT(*) FROM animals;
 SELECT COUNT(*) FROM animals WHERE escape_attempts = 0;
 SELECT AVG(weight_kg) FROM animals;
-SELECT neutered, AVG(escape_attempts) FROM animals GROUP BY neutered ORDER BY AVG(escape_attempts) DESC LIMIT 1;
-SELECT species, MIN(weight_kg), MAX(weight_kg) FROM animals GROUP BY species;
+SELECT neutered, AVG(escape_attempts) FROM animals GROUP BY neutered;
+SELECT MAX(weight_kg) AS max_weight, MIN(weight_kg) AS min_weight FROM animals; 
 SELECT species, AVG(escape_attempts) FROM animals WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31' GROUP BY species;
+
 
 
 
