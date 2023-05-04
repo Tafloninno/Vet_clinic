@@ -10,3 +10,28 @@ CREATE TABLE animals (
     CONSTRAINT animals_pkey PRIMARY KEY (id)
 );
 
+CREATE TABLE owners (
+	id SERIAL PRIMARY KEY,
+	full_name VARCHAR (50) NOT NULL,
+	age INT NOT NULL
+);
+CREATE TABLE species(
+		id SERIAL PRIMARY KEY,
+		name VARCHAR(50) NOT NULL
+);
+ALTER TABLE animals
+  DROP COLUMN species;
+  SELECT * FROM animals
+  
+ALTER TABLE animals ADD species_id INT REFERENCES species(id);
+
+ALTER TABLE animals
+ADD CONSTRAINT species_id
+FOREIGN KEY (species_id)
+REFERENCES species(id);
+
+ALTER TABLE animals ADD owner_id INT REFERENCES owners(id);
+ALTER TABLE animals
+ADD CONSTRAINT owner_id
+FOREIGN KEY (owner_id)
+REFERENCES owners(id);
